@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mobile Cleaning Service</title>
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Example description">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="priser.css">
+    <link rel="shortcut icon" href="Images/Logo.png" alt="logo billede">
+
+</head>
+
+<body>
+
+    <!--Her er navigations baren med ul,li, ahref(billede), samt en burgerbar icon-->
+    <nav>
+        <ul>
+            <li class="logo">
+                <a href="index.html"><img src="Images/Logo.png" alt="logo billede"> </a>
+            </li>
+            <li class="items"><a href="galleri.html">Galleri</a></li>
+            <li class="items"><a href="priser.html">Priser</a></li>
+            <li class="items"><a href="#">Om os</a></li>
+            <li class="items"><a href="#">Kontakt</a></li>
+            <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+
+    <!--slider-->
+
+    <div id="slider">
+        <figure>
+            <img src="Images/priser&ydelser.jpg" alt="slide billede 1">
+            <img src="Images/priser&ydelser2.jpg" alt="slide billede 2">
+            <img src="Images/priser&ydelser3.jpg" alt="slide billede 3">
+            <img src="Images/priser&ydelser4.jpg" alt="slide billede 4">
+            <img src="Images/priser&ydelser.jpg" alt="slide billede 5">
+
+        </figure>
+
+
+    </div>
+
+    <!--blå decorations billede-->
+    <div class="blue-dec">
+        <img src="Images/fb.png" alt="blå facebook decerations billede">
+    </div>
+
+    <!--Overskrift-->
+    <div class="container-tekst">
+        <h3>Vælg din biltype for hurtig oversigt</h3>
+    </div>
+
+    <!--Knapper med iconer og tekst, samt tildelt on klick funktion-->
+    <div class="container-knap">
+        <button class="b1" onClick="myFunction()"><i class="fas fa-car-side"></i>&nbsp;Lille</button>
+        <button class="b2" onClick="myFunction2()"><i class="fas fa-car-side"></i>&nbsp;Mellem</button>
+        <button class="b3" onClick="myFunction3()"><i class="fas fa-car-side"></i>&nbsp;Stor</button>
+        <button class="b4" onClick="myFunction4()"><i class="fas fa-car-side"></i>&nbsp; Ekstra stor</button>
+        <button class="b5" onClick="myFunction5()"> Luk &nbsp; <i class="far fa-times-circle"></i></button>
+    </div>
+
+    <!--Billeder der vises når der trykkes på knapperne ovenfor-->
+    <div class="content-billeder">
+        <div id="first"><img src="Images/lille.png" alt="Ydelser til lille bil"> </div>
+        <div id="second"><img src="Images/mellem.png" alt="Ydelser til mellem bil"> </div>
+        <div id="third"><img src="Images/stor.png" alt="Ydelser til stor bil"> </div>
+        <div id="fourth"><img src="Images/exstrastor.png" alt="Ydelser til ekstra stor bil"> </div>
+    </div>
+
+    <!--Prisliste container-->
+    <div class="container">
+        <!--Overskrift-->
+        <div class="pris-txt">
+            <h3>Fulde pris oversigt</h3>
+        </div>
+
+        <!--pris tabel 1, indeholder pris header med -> pris og titel og derefter en pricing list med ul li elementer.-->
+        <div class="pricing-table table1">
+            <div class="pricing-header">
+                <div class="price"><span>890 </span>KR</div>
+                <div class="title">guld service af <strong>lille</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Brændstofdæksel</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>pedalrens</li>
+                <figure class="border"></figure>
+                <li> Sæde behandling</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+
+        <!--pris tabel 2-->
+
+        <div class="pricing-table table2">
+            <div class="pricing-header">
+                <div class="price"><span>590</span>KR</div>
+                <div class="title">Sølv service af <strong>lille</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 3-->
+        <div class="pricing-table table3">
+            <div class="pricing-header">
+                <div class="price"><span>440</span>KR</div>
+                <div class="title">Bronze service af <strong>lille</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#" class="knap">Bestil</a>
+        </div>
+
+        <!--pris tabel 1-->
+
+        <div class="pricing-table table1">
+            <div class="pricing-header">
+                <div class="price"><span>990 </span>KR</div>
+                <div class="title">guld service af <strong>mellem</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Brændstofdæksel</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>pedalrens</li>
+                <figure class="border"></figure>
+                <li> Sæde behandling</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 2-->
+        <div class="pricing-table table2">
+            <div class="pricing-header">
+                <div class="price"><span>690</span>KR</div>
+                <div class="title">Sølv service af <strong>mellem</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 3-->
+        <div class="pricing-table table3">
+            <div class="pricing-header">
+                <div class="price"><span>540</span>KR</div>
+                <div class="title">Bronze service af <strong>mellem</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#" class="knap">Bestil</a>
+        </div>
+
+        <!--pris tabel 1-->
+        <div class="pricing-table table1">
+            <div class="pricing-header">
+                <div class="price"><span>1.090 </span>KR</div>
+                <div class="title">guld service af <strong>stor</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Brændstofdæksel</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>pedalrens</li>
+                <figure class="border"></figure>
+                <li> Sæde behandling</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 2-->
+        <div class="pricing-table table2">
+            <div class="pricing-header">
+                <div class="price"><span>840</span>KR</div>
+                <div class="title">Sølv service af <strong>stor</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 3-->
+        <div class="pricing-table table3">
+            <div class="pricing-header">
+                <div class="price"><span>740</span>KR</div>
+                <div class="title">Bronze service af <strong>stor</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#" class="knap">Bestil</a>
+        </div>
+        <!--pris tabel 2-->
+        <div class="pricing-table table1">
+            <div class="pricing-header">
+                <div class="price"><span>1.140 </span>KR</div>
+                <div class="title">guld service af <strong>ekstra stor</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Brændstofdæksel</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>pedalrens</li>
+                <figure class="border"></figure>
+                <li> Sæde behandling</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 2-->
+        <div class="pricing-table table2">
+            <div class="pricing-header">
+                <div class="price"><span>840</span>KR</div>
+                <div class="title">Sølv service af <strong>ekstra stor</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li> Voksbehandling</li>
+                <figure class="border"></figure>
+                <li> Spejle,Grill</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+                <li>Støvsugning bagagerum</li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#">Bestil</a>
+        </div>
+        <!--pris tabel 3-->
+        <div class="pricing-table table3">
+            <div class="pricing-header">
+                <div class="price"><span>740</span>KR</div>
+                <div class="title">Bronze service af <strong>ekstra stor</strong> bil </div>
+            </div>
+            <ul class="pricing-list">
+                <li><strong>-udvendig-</strong></li>
+                <figure class="border"></figure>
+                <li>udvendig vask </li>
+                <figure class="border"></figure>
+                <li> Fælge/hjul vask</li>
+                <figure class="border"></figure>
+                <li>Rudepudsing</li>
+                <figure class="border"></figure>
+                <li> Dørfalse</li>
+                <figure class="border"></figure>
+                <li><strong>-Indvendig-</strong></li>
+                <figure class="border"></figure>
+                <li> Rudepudsing</li>
+                <figure class="border"></figure>
+                <li>Støvsugning</li>
+                <figure class="border"></figure>
+                <li>Plastik og venyl rens</li>
+                <figure class="border"></figure>
+                <li>Støvsugning af måtter </li>
+                <figure class="border"></figure>
+            </ul>
+            <a href="#" class="knap">Bestil</a>
+        </div>
+
+    </div>
+    <!--pris tabel slut-->
+
+
+    <!--main sektion auto type-->
+
+
+    <section id="main">
+
+        <!--baggrund billede-->
+
+        <div class="bg">
+            <img src="Images/billede-autotekst.jpeg" alt="baggrundsbillede til auto type tekst">
+        </div>
+
+        <!-- auto tekst-->
+
+        <div class="auto-text">
+
+            <strong>Mobile cleaning service <span class="skriv"></span></strong>
+        </div>
+
+
+    </section>
+
+
+    <!-- footer start-->
+    <footer>
+        <!-- footer cotainer-->
+        <div class="main-content">
+            <!-- footer vesntre side-->
+            <div class="left box">
+                <h2> Sociale medier</h2>
+                <div class="content">
+
+                    <div class="social">
+                        <a href="#"><span class="fab fa-facebook-f"></span></a>
+                        <a href="#"><span class="fab fa-twitter"></span></a>
+                        <a href="#"><span class="fab fa-instagram"></span></a>
+                        <a href="#"><span class="fab fa-youtube"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- footer center-->
+            <div class="center box">
+                <h2>Kontakt</h2>
+                <div class="content">
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Midtjylland & omegen</span>
+                    </div>
+                    <div class="phone">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="text">+45 21 23 43 56</span>
+                    </div>
+                    <div class="email">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">msc@service.dk</span>
+                    </div>
+                </div>
+            </div>
+            <!-- footer højre side-->
+            <div class="right box">
+                <h2>Send os en mail</h2>
+                <div class="content">
+                    <form action="#">
+                        <div class="email">
+                            <div class="text">
+                                Email </div>
+                            <input type="email" placeholder="">
+                        </div>
+                        <div class="msg">
+                            <div class="text">
+                                Besked </div>
+
+                            <textarea class=".msgForm" rows="2" cols="10" placeholder=""></textarea>
+
+
+                            <br />
+                            <div class="btn">
+                                <button type="submit">Send</button>
+                            </div>
+                            <div class="bottom">
+                                <!-- nedre tekst i footeren-->
+                                <center>
+                                    <span class="credit">Created By <a href="#">Mobile Cleaning Service</a> | </span>
+                                    <span class="far fa-copyright"></span> 2020 All rights reserved.
+                                </center>
+                            </div>
+
+
+
+    </footer>
+
+    <!--type script implemanteres-->
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+
+    <script src="js/script.js"></script>
+
+
+</body>
+
+
+</html>

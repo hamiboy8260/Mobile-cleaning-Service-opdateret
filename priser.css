@@ -1,0 +1,924 @@
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+  @import "compass/css3";
+  * {
+      box-sizing: border-box;
+      font-family: "Open Sans", sans-serif;
+      text-decoration: none;
+      list-style: none;
+  }
+  /* navbar styles */
+  
+  nav {
+      background-color: #364857;
+      width: 100%;
+      padding: 5px 40px;
+      -webkit-box-shadow: 0px 11px 4px -6px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 11px 4px -6px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 11px 4px -6px rgba(0, 0, 0, 0.75);
+  }
+  /* burger flexbox til at placere ul elementerne */
+  
+  nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+  }
+  /* Her gives li elementerne lidt padding*/
+  
+  nav ul li {
+      padding: 10px 40px;
+  }
+  /* li.itmes som er text elementerne, positioneres og får order:3 hvor vi ændre på rækkefølgen for at få burger iconet på to*/
+  
+  nav ul li.items {
+      position: relative;
+      width: auto;
+      margin: 0 16px;
+      text-align: center;
+      order: 3;
+      cursor: pointer;
+  }
+  /* Dette er den her after effect når man holder musen over li.items, her de aftereffects positioneret*/
+  
+  nav ul li.items:after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 5px;
+      height: 2px;
+      width: 100%;
+      background: #269ae2;
+      opacity: 0;
+      transition: all 0.2s linear;
+  }
+  /* Her synliggøres hover effecten med en opacity på 1 og underline rykker tættere, lige under bogstaverne */
+  
+  nav ul li.items:hover:after {
+      opacity: 1;
+      bottom: 8px;
+  }
+  /* Logos placering */
+  
+  nav ul li.logo {
+      flex: 1;
+  }
+  /* dekorering af text elementerne i headeren */
+  
+  nav ul li a {
+      color: white;
+      font-size: 22px;
+      text-decoration: none;
+      transition: .4s;
+      font-family: open sans, sans serif;
+      font-weight: 600;
+  }
+  /* Blå hover effekt på text elementerne*/
+  
+  nav ul li:hover a {
+      color: #269ae2
+  }
+  
+  nav ul li i {
+      font-size: 23px;
+  }
+  
+  nav ul li.btn {
+      display: none;
+      background: #364857;
+  }
+  /* Gør at burgerbaren efter klik bliver til kryds*/
+  
+  nav ul li.btn.hide i:before {
+      content: '\f00d';
+  }
+  /* slider billeder, så det ikke flyder over skærmen*/
+  
+  #slider {
+      overflow: hidden;
+  }
+  /* figure tag som ligger i slider */
+  
+  #slider figure {
+      position: relative;
+      text-align: center;
+      width: 500%;
+      margin: 0;
+      left: 0;
+      animation: 20s slider infinite;
+  }
+  /* billederne i slider */
+  
+  #slider figure img {
+      float: left;
+      width: 20%;
+      height: 750px;
+  }
+  /* Keyframes til hvordan billederne skal slide, i slideshowet*/
+  
+  @keyframes slider {
+      0% {
+          left: 0;
+      }
+      20% {
+          left: 0;
+      }
+      25% {
+          left: -100%;
+      }
+      45% {
+          left: -100%;
+      }
+      50% {
+          left: -200%;
+      }
+      70% {
+          left: -200%;
+      }
+      75% {
+          left: -300%;
+      }
+      95% {
+          left: -300%;
+      }
+      95% {
+          left: -400%;
+      }
+  }
+  /* Blå decorations billede*/
+  
+  .blue-dec img {
+      width: 100%;
+      margin-top: -213px;
+      margin-bottom: -350px;
+  }
+  /* containeren teksten står i*/
+  
+  .container-tekst {
+      text-align: center;
+      width: 100%;
+  }
+  /* selve teksten i containeren decoreres og placeres*/
+  
+  .container-tekst h3 {
+      color: #269ae2;
+      background-color: rgba (14, 14, 14, 0.76);
+      width: 100%;
+      margin-top: 60px;
+      font-size: 2.5rem;
+      font-family: open sans, sans serif;
+  }
+  /* bil ikonerne på de 4 første knapper, gives forskellig størrelser*/
+  
+  .container-knap .b1 i {
+      font-size: 10px;
+  }
+  
+  .container-knap .b2 i {
+      font-size: 15px;
+  }
+  
+  .container-knap .b3 i {
+      font-size: 20px;
+  }
+  
+  .container-knap .b4 i {
+      font-size: 25px;
+  }
+  /* de blå knapper placeres*/
+  
+  .container-knap {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+  }
+  /* knap 1 decoration*/
+  
+  .b1 {
+      color: white;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      align-items: center;
+  }
+  /* knap 2 decoration*/
+  
+  .b2 {
+      color: white;
+      width: 120px;
+      height: 40px;
+      text-align: center;
+      align-items: center;
+  }
+  /* knap 3 decoration*/
+  
+  .b3 {
+      color: white;
+      width: 100px;
+      height: 40px;
+      text-align: center;
+      align-items: center;
+  }
+  /* knap 4 decoration*/
+  
+  .b4 {
+      color: white;
+      width: 150px;
+      height: 40px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  }
+  /* knap 5 decoration*/
+  
+  .b5 {
+      color: white;
+      width: 90px;
+      height: 40px;
+      text-align: center;
+      align-items: center;
+  }
+  /* De små billeders container*/
+  
+  .content-billeder {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 120px;
+      margin-top: 30px;
+  }
+  /* selve de små billeder der vises når man klikker på knapperne*/
+  
+  .content-billeder img {
+      width: 99%;
+      height: 500px;
+  }
+  /* De små billeder bliver hver især gjort usynlige på skærmen til at starte med*/
+  
+  #second,
+  #third,
+  #first,
+  #third,
+  #fourth {
+      display: none;
+  }
+  /* gældennde for de 5 knapper, placering og decoration*/
+  
+  .container-knap button {
+      margin: 10px 2px;
+      display: flex;
+      justify-content: center;
+      background-color: #5ba5eb;
+      cursor: pointer;
+      font-size: 17px;
+      border: none;
+      -webkit-box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+      box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+  }
+  /* prisliste container- fexbox bruges og der decoreres*/
+  
+  .container {
+      width: 100%;
+      padding: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      background: #364857;
+      justify-content: center;
+  }
+  /*"fulde prisoversigt" tekst placeres og decoreres*/
+  
+  .pris-txt {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      height: 50px;
+      width: 100%;
+      margin-top: 60px;
+      font-size: 2.5rem;
+      color: #269ae2;
+      background-color: rgba (14, 14, 14, 0.76);
+      font-family: open sans, sans serif;
+  }
+  /*Alle 12 pris tabeller decoreres på samme tid*/
+  
+  .pricing-table {
+      background: transparent;
+      border: 4px outset #269ae2;
+      border-radius: 14px 0px 40px 0px;
+      margin: 10px;
+      width: 250px;
+      text-transform: uppercase;
+      float: left;
+      flex-wrap: wrap column;
+      align-items: center;
+      margin-left: 40px;
+      margin-top: 150px;
+      justify-content: center;
+  }
+  /*Alle 12 pris tabellers headere*/
+  
+  .pricing-header {
+      color: #fff;
+      position: relative;
+      margin-bottom: 20px;
+  }
+  /*pris sektion i pris headerne*/
+  
+  .price {
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+  }
+  /*pris span tag sektion i pris headerne*/
+  
+  .price span {
+      font-size: 40px;
+  }
+  /*overskrifterne i pris headerne*/
+  
+  .title {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      width: 80%;
+      max-width: 360px;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 14px;
+  }
+  /*selve pris listerne under headeren får padding*/
+  
+  .pricing-list {
+      padding: 10px 10px;
+  }
+  /* li taggene i pris listerne*/
+  
+  .pricing-list li {
+      margin: 9px 0px;
+      font-size: 14px;
+      color: white;
+      text-align: center;
+  }
+  /* linjerne under tekst i pricing list decoreres her*/
+  
+  .border {
+      width: 150px;
+      height: 1px;
+      background: #ddd;
+      margin: auto;
+  }
+  /* decoration af bestil knapperne i prislisterne*/
+  
+  .pricing-table a {
+      display: block;
+      width: 70%;
+      margin: auto;
+      margin-bottom: 20px;
+      text-align: center;
+      padding: 8px 0;
+      font-size: 14px;
+      border: 1px solid;
+      max-width: 260px;
+      transition: .2s linear;
+  }
+  /* hover effect til knapperne*/
+  
+  .pricing-table a:hover {
+      border-radius: 30px;
+  }
+  /* Alle tabel 1 pris header farve*/
+  
+  .table1 .pricing-header {
+      background: #AE8625;
+  }
+  /* Alle tabe 2 pris header farve*/
+  
+  .table2 .pricing-header {
+      background: #C0C0C0;
+  }
+  /* Alle tabel 3 pris header farve*/
+  
+  .table3 .pricing-header {
+      background: #895E1A;
+  }
+  /* Alle tabel 1 titel sektion baggrunsfarve*/
+  
+  .table1 .title {
+      background-image: linear-gradient(125deg, #AE8625, #F7EF8A);
+  }
+  /* Alle tabel 2 titel sektion baggrunsfarve*/
+  
+  .table2 .title {
+      background-image: linear-gradient(125deg, #666666ff, #f3f3f3ff);
+  }
+  /* Alle tabel 3 titel sektion baggrunsfarve*/
+  
+  .table3 .title {
+      background-image: linear-gradient(125deg, #804a00, #B08D57);
+  }
+  /* Alle tabel 1 knap farve*/
+  
+  .table1 a {
+      color: #AE8625;
+  }
+  /* Alle tabel 2 knap farve*/
+  
+  .table2 a {
+      color: #C0C0C0;
+  }
+  /* Alle tabel 3 knap farve*/
+  
+  .table3 a {
+      color: #895E1A;
+  }
+  /* Alle tabel 1 knap bagggrunds farve og tekst farve ved hover*/
+  
+  .table1 a:hover {
+      background: #AE8625;
+      color: #fff;
+  }
+  /* Alle tabel 2 knap bagggrunds farve og tekst farve ved hover*/
+  
+  .table2 a:hover {
+      background: #C0C0C0;
+      color: #fff;
+  }
+  /* Alle tabel 3 knap bagggrunds farve og tekst farve ved hover*/
+  
+  .table3 a:hover {
+      background: #895E1A;
+      color: #fff;
+  }
+  /* ingen tekst decoration til bestil knapperne i prislisterne*/
+  
+  a {
+      text-decoration: none;
+  }
+  /*Main section til auto tekst*/
+  
+  #main {
+      width: 100%;
+      height: 100vh;
+      background-color: #364857;
+  }
+  /*Sectionen hvor billedet er i*/
+  
+  .bg {
+      width: 100%;
+      height: 100vh;
+  }
+  /*Selve baggrundsbilledet til autoteksten*/
+  
+  .bg img {
+      width: 100%;
+      height: 100%;
+  }
+  /*auto tekstens section placeres og decoreres*/
+  
+  .auto-text {
+      width: 100%;
+      height: 30%;
+      margin-top: 515%;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: rgba (14, 14, 14, 0.76);
+      background-color: rgba(22, 47, 67, 0.8);
+  }
+  /*selv autoteksten*/
+  
+  .auto-text strong {
+      font-size: 2.5rem;
+      width: 100%;
+      text-align: center;
+      color: white;
+      line-height: 50px;
+  }
+  /*span tagget får en anden farve*/
+  
+  .auto-text strong span {
+      color: #269ae2;
+  }
+  /* Iphone x media queries  */
+  
+  @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+      body {
+          overflow-x: hidden;
+      }
+      nav {
+          padding: 5px 30px;
+      }
+      nav ul li.items {
+          width: 100%;
+          display: none;
+      }
+      nav ul li.items.show {
+          display: none;
+      }
+      /* placering buger baren */
+      nav ul li.btn {
+          display: block;
+          margin-top: -50px;
+      }
+      /* farven på burger ikon sættes til hvid  */
+      nav ul li:hover a {
+          color: white;
+      }
+      nav ul li.items:hover:after {
+          opacity: 0;
+      }
+      nav ul li.logo {
+          flex: 0;
+      }
+      .blue-dec img {
+          display: none;
+      }
+  }
+  /* Hele footer containeren specificeres og gives en farve*/
+  
+  footer {
+      width: 100%;
+      background: linear-gradient(to right, #3e8ed0, #5fa6e0, #2338be);
+  }
+  /* flexbox bruges*/
+  
+  .main-content {
+      display: flex;
+  }
+  /* Her intialiseres størrelsen content boksene, hvor meget plads de hver især får, samt vertical placering i footeren */
+  
+  .main-content .box {
+      flex-basis: 50%;
+      padding: 50px 50px;
+  }
+  /* overskrifterne i footeren decoreres*/
+  
+  .box h2 {
+      font-size: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-family: 'Open Sans regular', sans-serif;
+      color: white;
+      text-decoration: underline;
+  }
+  /* her decoreres de 3 content elementer og de får en margin top på 30 så de er 30px under overskrifterne*/
+  
+  .box .content {
+      margin: 20px 0 0 0;
+      position: relative;
+  }
+  /* de 3 a elementer i baggrunden den venstre side af footeren får 10px melllemrum under dem*/
+  
+  .left .content .social a {
+      padding: 0 10px;
+      text-decoration: none;
+  }
+  /*placering af de hvide ikoner i de sorte bokse (venstre side)*/
+  
+  .left .content .social .fab {
+      padding: 0px 10px;
+      text-decoration: none;
+  }
+  /*Decoration og placering af span elementerne i venstre side både de storte  baggrunde og hvide fa elementer*/
+  
+  .left .content .social a span {
+      cursor: pointer;
+      height: 40px;
+      width: 40px;
+      background: #1a1a1a;
+      color: white;
+      line-height: 40px;
+      font-size: 18px;
+      border-radius: 10px;
+      transition: 0.5s;
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+  }
+  /*vesntre side hover effect*/
+  
+  .left .content .social a span:hover {
+      background: lightblue;
+  }
+  /*Decoration og placering af ikon elementerne i midten både de storte  baggrunde og hvide fa elementer*/
+  
+  .center .content .fas {
+      font-size: 1.4375rem;
+      background: #1a1a1a;
+      color: white;
+      height: 45px;
+      width: 45px;
+      line-height: 45px;
+      text-align: center;
+      border-radius: 50%;
+      transition: 0.5s;
+      cursor: pointer;
+      margin-top: 50px;
+  }
+  /*center hover effect*/
+  
+  .center .content .fas:hover {
+      background: lightblue;
+  }
+  /* tekst ved center ikonerne placeres og decoreres*/
+  
+  .center .content .text {
+      color: white;
+      font-size: 15px;
+      font-family: 'Open Sans regular', sans-serif;
+      font-weight: 600;
+      padding-left: 10px;
+  }
+  /*text decoration og placering, høre side*/
+  
+  .right form .text {
+      font-size: 15px;
+      color: white;
+      font-family: 'Open Sans regular', sans-serif;
+      margin-bottom: 2px;
+      font-weight: 550;
+      padding-left: 10px;
+  }
+  /*besked boks tekst hvor der står "besked*/
+  
+  .right form .msg {
+      margin-top: 30px;
+  }
+  /*inputfelternes decoration*/
+  
+  .right form input,
+  .right form .msgForm {
+      margin: 10px 0px;
+      height: 35px;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px solid #364857;
+      color: white;
+      width: 100%;
+  }
+  /*besked placeholderens højde*/
+  
+  .right form textarea {
+      margin: 20px 0;
+      background-color: transparent;
+      border: 0;
+      border-bottom: 2px solid #364857;
+      color: white;
+      width: 100%;
+      height: 150px;
+  }
+  /*højre sides boksen som knappen er i, får specaliseret placering*/
+  
+  .right form .btn {
+      margin-top: 10px;
+      justify-content: center;
+      margin: 10px 0;
+      margin-left: -35px;
+      background: transparent;
+  }
+  /*selve knappen placeres inde i boksen og decoreres*/
+  
+  .right form .btn button {
+      padding: 10px 200px;
+      margin-left: 30px;
+      border: none;
+      outline: none;
+      font-family: 'Open Sans regular', sans-serif;
+      background: black;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: .3s;
+  }
+  /*Knappens hover effekt*/
+  
+  .right form .btn button:hover {
+      background: #5ba5eb;
+  }
+  /*boksen som tekst skal stå i placeres og decoreres*/
+  
+  .bottom center {
+      width: 110%;
+      font-size: 15px;
+      background: transparent;
+      font-family: 'Open Sans regular', sans-serif;
+      display: flex;
+  }
+  /*Ved hjælp af span tagget i html kan jeg her farve span tagget*/
+  
+  .bottom center span {
+      color: black;
+  }
+  /*Den klikbare tekst decoreres her*/
+  
+  .bottom center a {
+      color: lightblue;
+      text-decoration: none;
+  }
+  /*hover underline ved mouseover*/
+  
+  .bottom center a:hover {
+      text-decoration: underline;
+  }
+  /* []iPhone 6,7, og 8 Media Queries */
+  
+  @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+      body {
+          overflow-x: hidden;
+      }
+      nav {
+          padding: 5px 30px;
+      }
+      nav ul li.items {
+          width: 100%;
+          display: none;
+      }
+      nav ul li.items.show {
+          display: block;
+      }
+      nav ul li.btn {
+          display: block;
+      }
+      /* fjerner hover over underline effect som er på desktop*/
+      nav ul li.items:hover:after {
+          opacity: 0;
+      }
+      #slider {
+          height: 500px;
+          width: 100%;
+      }
+      .facebook-img img {
+          display: none;
+      }
+      .container-tekst h3 {
+          width: 100%;
+          font-size: 23px;
+          text-align: center;
+      }
+      .content-billeder img {
+          width: 100%;
+          height: 300px;
+      }
+      .content-billeder {
+          height: 300px;
+          margin-bottom: 20px;
+      }
+      .container-knap i {
+          display: none;
+      }
+      .container-knap {
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+      }
+      .container-knap button {
+          width: 100px;
+      }
+      .pris-txt {
+          font-size: 28px;
+      }
+      .container {
+          width: 100%;
+      }
+      .pricing-table {
+          margin-left: 10px;
+          margin-top: 80px;
+      }
+      .bg img {
+          width: 99.9%;
+          height: 60%;
+          margin-top: 100px;
+      }
+      .blue-dec img {
+          display: none;
+      }
+      .auto-text {
+          width: 100%;
+          height: 30%;
+          margin-top: 3200%;
+      }
+      .auto-text strong {
+          font-size: 1.2rem;
+          line-height: 30px;
+      }
+      footer {
+          position: relative;
+          bottom: 0px;
+      }
+      .main-content {
+          flex-wrap: wrap;
+          flex-direction: column;
+      }
+      .main-content .box {
+          margin: 5px 0;
+      }
+      .box .content:after {
+          display: none;
+      }
+      .right form input,
+      .right form .msgForm {
+          width: 70%;
+      }
+      .right form textarea {
+          width: 70%;
+      }
+      .right form .btn button {
+          padding: 10px 50px;
+          margin-left: 15px;
+      }
+      .bottom center {
+          display: none;
+      }
+  }
+  /*iPad*/
+  
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+      body {
+          overflow-x: hidden;
+      }
+      nav {
+          padding: 5px 30px;
+      }
+      nav ul li.items {
+          width: 100%;
+          display: none;
+      }
+      nav ul li.items.show {
+          display: block;
+      }
+      nav ul li.btn {
+          display: block;
+          margin-top: 15px;
+          margin-left: 200px;
+      }
+      nav ul li.items:hover {
+          border-radius: 5px;
+      }
+      nav ul li.items:hover:after {
+          opacity: 0;
+      }
+      .facebook-img {
+          display: none;
+      }
+      .blue-dec img {
+          width: 100%;
+          margin-top: -127px;
+          margin-bottom: -240px;
+      }
+      .auto-text {
+          width: 100%;
+          height: 30%;
+          margin-top: 1050%;
+      }
+      footer {
+          position: relative;
+          bottom: 0px;
+      }
+      .main-content {
+          flex-wrap: wrap;
+          flex-direction: column;
+      }
+      .main-content .box {
+          margin: 5px 0;
+      }
+      .box .content:after {
+          position: absolute;
+          content: '';
+          top: -20px;
+          height: 2px;
+          width: 70%;
+          background: lightblue;
+      }
+      .right form input,
+      .right form .msgForm {
+          width: 70%;
+      }
+      .right form textarea {
+          width: 70%;
+      }
+      .right form .btn button {
+          padding: 10px 100px;
+          margin-left: 70px;
+      }
+      .right form .btn button {
+          padding: 10px 50px;
+          margin-left: 25px;
+      }
+      .bottom center {
+          width: 100%;
+          margin-top: 10px;
+          align-items: center;
+          margin-left: 110px;
+      }
+  }

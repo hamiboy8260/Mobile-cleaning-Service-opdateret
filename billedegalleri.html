@@ -1,0 +1,42 @@
+<html id="baggrund">
+
+<head>
+    <title> Billed galleri</title>
+    <meta name="viewport" content="width-device-width, initial-scale-1">
+    <link rel="stylesheet" href="billedegalleri.css">
+
+</head>
+<!-- Efterskolens logo som linker tilbage til index  -->
+<a href="index.html">
+
+    <img id="logo1" src="Images/logo (2).png">
+</a>
+
+<body>
+    <!-- Denne del definere vores galleri, samt har function til JS  -->
+    <div class="product">
+        <div class="product-small-img">
+            <img src="Images/renbil-1.jpg" onclick="myFunction(this)">
+            <img src="Images/renbil1.jpg" onclick="myFunction(this)">
+            <img src="Images/renbil2.jpg" onclick="myFunction(this)">
+            <img src="Images/renbil-2.jpg" onclick="myFunction(this)">
+            <img src="Images/renbil3.jpg" onclick="myFunction(this)">
+            <img src="Images/renbil-3.jpg" onclick="myFunction(this)">
+
+
+        </div>
+        <!-- Dette er en class så galleriet kan vises i fuldt billede - Står i JS  -->
+        <div class="img-container">
+            <img id="imageBox" src="Images/renbil-1.jpg">
+        </div>
+    </div>
+    <!-- JavaScript med Funtion og Elements "galleri"  -->
+    <script>
+        function myFunction(smallImg) {
+            var fullImg = document.getElementById("imageBox");
+            fullImg.src = smallImg.src;
+        }
+    </script>
+</body>
+
+</html>

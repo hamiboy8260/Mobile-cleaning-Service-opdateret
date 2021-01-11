@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Billed galleri til de små billeder */
+
+.product-small-img img {
+    height: 92px;
+    margin: 10px 0;
+    cursor: pointer;
+    display: block;
+    opacity: .6;
+}
+
+
+/* Hover effekt til små billeder galleri */
+
+.product-small-img img:hover {
+    opacity: 1;
+}
+
+
+/* Små billeder - galleri */
+
+.product-small-img {
+    float: left;
+}
+
+
+/* Hele class for billedergalleri */
+
+.product {
+    top: 50%;
+    left: 50%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+
+/* Stort billede styles - galleri */
+
+.img-container img {
+    height: 300px;
+    padding: 10px;
+}
+
+
+/* Stort billede styles - galleri */
+
+.img-container {
+    float: right;
+}
+
+
+/*Iphone X*/
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+    body {
+        overflow-x: hidden;
+    }
+    /* Billed galleri til de små billeder */
+    .product-small-img img {
+        height: 302px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: block;
+        opacity: .6;
+    }
+    /* Hover effekt til små billeder galleri */
+    .product-small-img img:hover {
+        opacity: 1;
+    }
+    /* Små billeder - galleri */
+    .product-small-img {
+        float: left;
+    }
+    /* Hele class for billedergalleri */
+    .product {
+        top: 45%;
+        width: 100%;
+        left: 50%;
+        display: flex;
+    }
+    /* Stort billede styles - galleri */
+    .img-container img {
+        width: 750px;
+        height: 1550px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+}
+
+
+/* []iPhone 6,7, og 8 Media Queries */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+    body {
+        overflow-x: hidden;
+    }
+    /* Billed galleri til de små billeder */
+    .product-small-img img {
+        height: 302px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: block;
+        opacity: .6;
+    }
+    /* Hover effekt til små billeder galleri */
+    .product-small-img img:hover {
+        opacity: 1;
+    }
+    /* Små billeder - galleri */
+    .product-small-img {
+        float: left;
+    }
+    /* Hele class for billedergalleri */
+    .product {
+        top: 45%;
+        width: 100%;
+        left: 50%;
+        display: flex;
+    }
+    /* Stort billede styles - galleri */
+    .img-container img {
+        width: 750px;
+        height: 1550px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+}
+
+
+/*iPad*/
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
+    /* Billed galleri til de små billeder */
+    .product-small-img img {
+        height: 302px;
+        margin: 10px 0;
+        cursor: pointer;
+        display: block;
+        opacity: .6;
+    }
+    /* Hover effekt til små billeder galleri */
+    .product-small-img img:hover {
+        opacity: 1;
+    }
+    /* Små billeder - galleri */
+    .product-small-img {
+        float: left;
+    }
+    /* Hele class for billedergalleri */
+    .product {
+        top: 45%;
+        width: 100%;
+        left: 50%;
+        display: flex;
+    }
+    /* Stort billede styles - galleri */
+    .img-container img {
+        width: 750px;
+        height: 1550px;
+        padding: 10px;
+        border: 2px solid black;
+    }
+}

@@ -1,0 +1,960 @@
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+            * {
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            /* navbar styles */
+            
+            nav {
+                background: #364857;
+                width: 100%;
+                padding: 5px 40px;
+                -webkit-box-shadow: 0px 11px 4px -6px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 0px 11px 4px -6px rgba(0, 0, 0, 0.75);
+                box-shadow: 0px 11px 4px -6px rgba(0, 0, 0, 0.75);
+            }
+            /* burger flexbox til at placere ul elementerne */
+            
+            nav ul {
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+            /* Her gives li elementerne lidt padding*/
+            
+            nav ul li {
+                padding: 10px 40px;
+            }
+            /* li.itmes som er text elementerne, positioneres og får order:3 hvor vi ændre på rækkefølgen for at få burger iconet på to*/
+            
+            nav ul li.items {
+                position: relative;
+                width: auto;
+                margin: 0 16px;
+                text-align: center;
+                order: 3;
+                cursor: pointer;
+            }
+            /* Dette er den her after effect når man holder musen over li.items, her de aftereffects positioneret*/
+            
+            nav ul li.items:after {
+                position: absolute;
+                content: '';
+                left: 0;
+                bottom: 5px;
+                height: 2px;
+                width: 100%;
+                background: #269ae2;
+                opacity: 0;
+                transition: all 0.2s linear;
+            }
+            /* Her synliggøres hover effecten med en opacity på 1 og underline rykker tættere, lige under bogstaverne */
+            
+            nav ul li.items:hover:after {
+                opacity: 1;
+                bottom: 8px;
+            }
+            /* Logos placering */
+            
+            nav ul li.logo {
+                flex: 1;
+            }
+            /* dekorering af text elementerne i headeren */
+            
+            nav ul li a {
+                color: white;
+                font-size: 22px;
+                text-decoration: none;
+                transition: .4s;
+                font-family: open sans, sans serif;
+                font-weight: 600;
+            }
+            /* Blå hover effekt på text elementerne*/
+            
+            nav ul li:hover a {
+                color: #269ae2
+            }
+            
+            nav ul li i {
+                font-size: 23px;
+            }
+            
+            nav ul li.btn {
+                display: none;
+                background: #364857;
+            }
+            /* Gør at burgerbaren efter klik bliver til kryds*/
+            
+            nav ul li.btn.hide i:before {
+                content: '\f00d';
+            }
+            /* Iphone x media queries  */
+            
+            @media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+                body {
+                    overflow-x: hidden;
+                }
+                nav {
+                    padding: 5px 30px;
+                }
+                nav ul li.items {
+                    width: 100%;
+                    display: none;
+                }
+                nav ul li.items.show {
+                    display: none;
+                }
+                /* placering buger baren */
+                nav ul li.btn {
+                    display: block;
+                    margin-top: -50px;
+                    margin-left: 10px;
+                }
+                /* farven på burger ikon sættes til hvid  */
+                nav ul li:hover a {
+                    color: white;
+                }
+                nav ul li.items:hover:after {
+                    opacity: 0;
+                }
+                nav ul li.logo {
+                    flex: 0;
+                }
+                .slideshow-item-text {
+                    max-width: 70%;
+                    padding: 7rem 1rem;
+                }
+                .slideshow-item-text h5 {
+                    font-size: 1rem;
+                    text-align: left;
+                }
+                .slideshow-item-text p {
+                    font-size: 1.2rem;
+                    font-weight: 900;
+                    text-align: left;
+                }
+                .services-indhold li {
+                    flex-basis: 100%;
+                    text-align: center;
+                }
+                .services-indhold li:last-child {
+                    margin-bottom: 2%;
+                }
+                .services-indhold li p {
+                    padding: 0;
+                    font-size: 1.6rem;
+                }
+                .services-indhold li h4 {
+                    font-size: 2.5rem;
+                }
+                .facebook-container {
+                    display: none;
+                }
+                .facebook-container h3 {
+                    display: none;
+                }
+                .text-fb {
+                    display: none;
+                }
+                .text-fb img {
+                    display: none;
+                }
+                .container {
+                    margin-top: 100px;
+                    height: 800px;
+                }
+                .container img {
+                    height: 800px;
+                }
+                .contact-form {
+                    flex-direction: column;
+                    margin-top: 30px;
+                }
+                .msg textarea {
+                    height: 80px;
+                }
+                .btn {
+                    padding: 10px 20px;
+                    font-size: 18px;
+                    margin-top: 20px;
+                    margin-left: 40px;
+                    font-weight: 600;
+                }
+                /* input felterne */
+                .input-fields,
+                .msg {
+                    width: 100%;
+                }
+                .facebook-container img {
+                    display: none;
+                }
+                .text-fb h3 {
+                    display: none;
+                }
+            }
+            /* slideshow box specificeres*/
+            
+            .slideshow {
+                width: 100%;
+                height: 100vh;
+                position: relative;
+                overflow: hidden;
+            }
+            /* de 5 slideshow-items specificeres, og billederne kører infinite, så de starter forfra hver gang der gået 30sek*/
+            
+            .slideshow-item {
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                opacity: 0;
+                animation: cycleImages 30s infinite;
+            }
+            /* de 5 slideshow-item billeder specificeres, og billederne kører infinite zoom, så de starter forfra hver gang der gået 30sek*/
+            
+            .slideshow-item img {
+                width: 100%;
+                height: 85%;
+                object-fit: cover;
+                animation: zoom 30s infinite;
+            }
+            /* animation-delay specificere hvornår billede nr 1 skal vises og i dette tilfælde ved 0s alså lige når slideshowet starter*/
+            
+            .slideshow-item:nth-child(1),
+            .slideshow-item:nth-child(1) img {
+                animation-delay: 0s;
+            }
+            
+            .slideshow-item:nth-child(2),
+            .slideshow-item:nth-child(2) img {
+                animation-delay: 5s;
+            }
+            
+            .slideshow-item:nth-child(5),
+            .slideshow-item:nth-child(5) img {
+                animation-delay: 10s;
+            }
+            
+            .slideshow-item:nth-child(3),
+            .slideshow-item:nth-child(3) img {
+                animation-delay: 15s;
+            }
+            
+            .slideshow-item:nth-child(4),
+            .slideshow-item:nth-child(4) img {
+                animation-delay: 20s;
+            }
+            /* Slideshow tekst og box specificeres og decoreres*/
+            
+            .slideshow-item-text {
+                max-width: 50%;
+                position: absolute;
+                top: 35%;
+                left: 0;
+                transform: translateY(-40%);
+                background-color: rgba(22, 47, 67, 0.8);
+                color: #fff;
+                padding: 6rem 4rem;
+            }
+            /* Slideshow overskrift*/
+            
+            .slideshow-item-text h5 {
+                font-size: 2rem;
+                font-family: 'Open Sans regular', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: 2.5rem;
+                text-align: center;
+            }
+            /* Slideshow brødtekst*/
+            
+            .slideshow-item-text p {
+                font-size: 1.6rem;
+                font-family: 'Open Sans regular', sans-serif;
+                letter-spacing: 1px;
+                font-weight: 300;
+                text-align: left;
+            }
+            /* Dette er keyframet ved navn cycleImage som blev tilføjet til billederne i .slideshow-item, som gør at ved 10,20 og 30% får billederne forskellige opacity*/
+            
+            @keyframes cycleImages {
+                10% {
+                    opacity: 1;
+                }
+                20% {
+                    opacity: 2;
+                }
+                30% {
+                    opacity: 0;
+                }
+            }
+            /* zoom keyframe som er brugt ved .slideshow-item img*/
+            
+            @keyframes zoom {
+                100% {
+                    transform: scale(1.5);
+                }
+            }
+            /* Service box containeren specificeres her*/
+            
+            .services-area {
+                margin-top: 5%;
+                margin-bottom: 5%;
+                text-decoration: none;
+            }
+            /* Ul elementer i service box containeren specificeres her, gjort brug af flexbox*/
+            
+            ul.services-indhold {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            /* selve de 3 li elementer i service box containeren specificeres her*/
+            
+            .services-indhold li {
+                padding: 0 30px;
+                flex-basis: 33%;
+                text-align: center;
+                list-style: none;
+            }
+            /* Overskrifterne i de 3 li elementerne decoreres */
+            
+            .services-indhold li h4 {
+                font-family: 'Open Sans regular', sans-serif;
+                font-size: 20px;
+                color: #364857;
+                margin-bottom: 20px;
+            }
+            /* brødteksten i de 3 li elementerne decoreres */
+            
+            .services-indhold li p {
+                font-family: 'Open Sans regular', sans-serif;
+                margin: 0;
+                font-size: 1.3rem;
+            }
+            /* Knapperne i de 3 li elementer decoreres og sepcificeres */
+            
+            .service-button {
+                background-color: #5ba5eb;
+                font-family: 'Open Sans regular', sans-serif;
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                margin-top: 10%;
+                -webkit-box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+                box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+            }
+            /* formular containeren specificeres */
+            
+            .container {
+                top: 200%;
+                width: 100%;
+                position: absolute;
+                margin: 100px auto;
+                transform: translateY(-10%);
+            }
+            /* Overskriften i formularen bliver decoreret og specificeret*/
+            
+            .text-box-form {
+                position: absolute;
+                text-align: center;
+                top: 9%;
+                left: 29%;
+                font-size: 200%;
+                color: white;
+                font-family: 'Open Sans regular', sans-serif;
+            }
+            /* baggrundsbillede i formularen*/
+            
+            .container img {
+                width: 100%;
+                height: 700px;
+            }
+            /* formular boksen specificeret og decoreret*/
+            
+            .contact-form {
+                position: absolute;
+                max-width: 550px;
+                margin: 0 auto;
+                background-color: rgba(22, 47, 67, 0.8);
+                padding: 30px;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: row;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .13);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            /* formular felterne specificeret, der bruges flexboks til at ligne felterne*/
+            
+            .input-fields {
+                display: flex;
+                flex-direction: column;
+                margin-right: 4%;
+            }
+            /* formular felterne specificeret, der bruges flexboks til at ligne felterne*/
+            
+            .input-fields .input,
+            .msg textarea {
+                margin: 20px 0;
+                background: transparent;
+                border: 0;
+                border-bottom: 2px solid #364857;
+                padding: 10px;
+                color: white;
+                width: 100%;
+            }
+            /* besked feltets højde specificeres*/
+            
+            .msg textarea {
+                height: 212px;
+            }
+            /* overskirfterne på placeholdere gøres hvid*/
+            
+             ::-webkit-input-placeholder {
+                color: white;
+            }
+            /* lav aftale knappen decoreres og specificeres*/
+            
+            .msg button {
+                background-color: #5ba5eb;
+                cursor: pointer;
+                border: none;
+                font-family: 'Open Sans regular', sans-serif;
+                color: white;
+                padding: 14px 50px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 0px 30px;
+                margin-top: 70px;
+                -webkit-box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+                box-shadow: -2px 11px 14px -10px rgba(0, 0, 0, 0.75);
+            }
+            /* facebook container specificeres*/
+            
+            .facebook-container {
+                display: flex;
+                position: relative;
+                margin-top: 68%;
+                width: 100%;
+                height: 30vh;
+            }
+            /* billede i facebook containeren specificeres*/
+            
+            .facebook-container img {
+                width: 100%;
+                height: 80vh;
+                margin-top: -15.5%;
+            }
+            /* overskriften til facebook containeren decoreres og specificeres*/
+            
+            .facebook-container h3 {
+                position: absolute;
+                margin-top: 11vh;
+                top: -55%;
+                left: 42%;
+                font-size: 30px;
+                font-family: 'Open Sans regular', sans-serif;
+                color: white;
+            }
+            
+            .fb-anmeldelser {
+                margin-top: 5%;
+                margin-bottom: 5%;
+                text-decoration: none;
+            }
+            /* Ul elementer i service box containeren specificeres her, gjort brug af flexbox*/
+            
+            ul.fb-billeder {
+                margin-top: -100px;
+                width: 100%;
+                height: 500px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: center;
+            }
+            /* selve de 3 li elementer i service box containeren specificeres her*/
+            
+            .fb-billeder li {
+                padding: 0 30px;
+                flex-basis: 33%;
+                text-align: center;
+                list-style: none;
+            }
+            
+            .fb-billeder li img {
+                width: 200%;
+                height: 500px;
+                overflow: hidden;
+                padding: 20px 100px;
+                margin-left: -200px;
+            }
+            /* Hele footer containeren specificeres og gives en farve*/
+            
+            footer {
+                width: 100%;
+                background: linear-gradient(to right, #3e8ed0, #5fa6e0, #2338be);
+            }
+            /* flexbox bruges*/
+            
+            .main-content {
+                display: flex;
+            }
+            /* Her intialiseres størrelsen content boksene, hvor meget plads de hver især får, samt vertical placering i footeren */
+            
+            .main-content .box {
+                flex-basis: 50%;
+                padding: 50px 50px;
+            }
+            /* overskrifterne i footeren decoreres*/
+            
+            .box h2 {
+                font-size: 20px;
+                font-weight: 600;
+                text-transform: uppercase;
+                font-family: 'Open Sans regular', sans-serif;
+                color: white;
+            }
+            /* her decoreres de 3 content elementer og de får en margin top på 30 så de er 30px under overskrifterne*/
+            
+            .box .content {
+                margin: 30px 0 0 0;
+                position: relative;
+            }
+            /* Blå linjer under overskrifterne*/
+            
+            .box .content:after {
+                position: absolute;
+                content: '';
+                top: -20px;
+                height: 2px;
+                width: 100%;
+                background: lightblue;
+            }
+            /* de 3 a elementer i baggrunden den venstre side af footeren får 10px melllemrum under dem*/
+            
+            .left .content .social a {
+                padding: 0 10px;
+                text-decoration: none;
+            }
+            /*placering af de hvide ikoner i de sorte bokse (venstre side)*/
+            
+            .left .content .social .fab {
+                padding: 0px 10px;
+                text-decoration: none;
+            }
+            /*Decoration og placering af span elementerne i venstre side både de storte  baggrunde og hvide fa elementer*/
+            
+            .left .content .social a span {
+                cursor: pointer;
+                height: 40px;
+                width: 40px;
+                background: #1a1a1a;
+                color: white;
+                line-height: 40px;
+                font-size: 18px;
+                border-radius: 10px;
+                transition: 0.5s;
+                display: flex;
+                flex-direction: row;
+                margin: 10px;
+            }
+            /*vesntre side hover effect*/
+            
+            .left .content .social a span:hover {
+                background: lightblue;
+            }
+            /*Decoration og placering af ikon elementerne i midten både de storte  baggrunde og hvide fa elementer*/
+            
+            .center .content .fas {
+                font-size: 1.4375rem;
+                background: #1a1a1a;
+                color: white;
+                height: 45px;
+                width: 45px;
+                line-height: 45px;
+                text-align: center;
+                border-radius: 50%;
+                transition: 0.5s;
+                cursor: pointer;
+                margin-top: 50px;
+            }
+            /*center hover effect*/
+            
+            .center .content .fas:hover {
+                background: lightblue;
+            }
+            /* tekst ved center ikonerne placeres og decoreres*/
+            
+            .center .content .text {
+                color: white;
+                font-size: 15px;
+                font-family: 'Open Sans regular', sans-serif;
+                font-weight: 600;
+                padding-left: 10px;
+            }
+            /*text decoration og placering, høre side*/
+            
+            .right form .text {
+                font-size: 15px;
+                color: white;
+                font-family: 'Open Sans regular', sans-serif;
+                margin-bottom: 2px;
+                font-weight: 550;
+                padding-left: 10px;
+            }
+            /*besked boks tekst hvor der står "besked*/
+            
+            .right form .msg {
+                margin-top: 30px;
+            }
+            /*inputfelternes decoration*/
+            
+            .right form input,
+            .right form .msgForm {
+                margin: 10px 0;
+                background-color: transparent;
+                border: 0;
+                border-bottom: 2px solid #364857;
+                color: white;
+                width: 100%;
+            }
+            /*besked placeholderens højde*/
+            
+            .right form textarea {
+                height: 100px;
+            }
+            /*højre sides boksen som knappen er i, får specaliseret placering*/
+            
+            .right form .btn {
+                margin-top: 10px;
+                justify-content: center;
+                margin: 10px 0;
+                margin-left: -35px;
+                background: transparent;
+            }
+            /*selve knappen placeres inde i boksen og decoreres*/
+            
+            .right form .btn button {
+                padding: 10px 200px;
+                border: none;
+                outline: none;
+                font-family: 'Open Sans regular', sans-serif;
+                background: black;
+                color: white;
+                font-size: 20px;
+                font-weight: 500;
+                cursor: pointer;
+                transition: .3s;
+            }
+            /*Knappens hover effekt*/
+            
+            .right form .btn button:hover {
+                background: #5ba5eb;
+            }
+            /*boksen som tekst skal stå i placeres og decoreres*/
+            
+            .bottom center {
+                width: 100%;
+                font-size: 15px;
+                margin-left: 30px;
+                background: transparent;
+                font-family: 'Open Sans regular', sans-serif;
+                display: flex;
+            }
+            /*Ved hjælp af span tagget i html kan jeg her farve span tagget*/
+            
+            .bottom center span {
+                color: black;
+            }
+            /*Den klikbare tekst decoreres her*/
+            
+            .bottom center a {
+                color: lightblue;
+                text-decoration: none;
+            }
+            /*hover underline ved mouseover*/
+            
+            .bottom center a:hover {
+                text-decoration: underline;
+            }
+            /* []iPhone 6,7, og 8 Media Queries */
+            
+            @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+                body {
+                    overflow-x: hidden;
+                }
+                nav {
+                    padding: 5px 30px;
+                }
+                nav ul li.items {
+                    width: 100%;
+                    display: none;
+                }
+                nav ul li.items.show {
+                    display: block;
+                }
+                nav ul li.btn {
+                    display: block;
+                }
+                /* fjerner hover over underline effect som er på desktop*/
+                nav ul li.items:hover:after {
+                    opacity: 0;
+                }
+                /* Dette er text boksen i slideshowet og ikke selve teksten*/
+                .slideshow-item-text {
+                    max-width: 70%;
+                    padding: 3rem 1rem;
+                    left: 6%;
+                }
+                /* Overskriften i boksene*/
+                .slideshow-item-text h5 {
+                    font-size: 1.2rem;
+                }
+                /* Brødtekst i boksene*/
+                .slideshow-item-text p {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    text-align: left;
+                }
+                /* containeren som formen skal være i*/
+                .text-box-form {
+                    top: 5%;
+                    left: 15%;
+                    font-size: 100%;
+                }
+                /* li elementerne bliver dekoreret (Hvor meget plads hver li elemet får og hvor meget nedre afstend det skal have) */
+                .services-indhold li {
+                    flex-basis: 100%;
+                    margin-bottom: 100px;
+                }
+                /* sidste element får bottom for at det ikke skal have for meget aftsand under */
+                .services-indhold li:last-child {
+                    margin-bottom: 2%;
+                }
+                .services-indhold li p {
+                    padding: 0;
+                    font-size: 1.6rem;
+                    font-weight: 600;
+                }
+                .services-indhold li h4 {
+                    font-size: 1.8rem;
+                }
+                .service-button {
+                    padding: 15px 25px;
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-top: 7%;
+                }
+                .container {
+                    top: 270%;
+                    height: 800px;
+                }
+                .container img {
+                    height: 800px;
+                }
+                .contact-form {
+                    flex-direction: column;
+                    margin-top: 30px;
+                }
+                .msg textarea {
+                    height: 80px;
+                }
+                .btn {
+                    padding: 10px 20px;
+                    font-size: 18px;
+                    margin-top: 20px;
+                    margin-left: 40px;
+                    font-weight: 600;
+                }
+                /* input felterne */
+                .input-fields,
+                .msg {
+                    width: 100%;
+                }
+                .facebook-container img {
+                    display: none;
+                }
+                .text-fb h3 {
+                    display: none;
+                }
+                footer {
+                    position: relative;
+                    bottom: 0px;
+                }
+                .main-content {
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+                .main-content .box {
+                    margin: 5px 0;
+                }
+                .box .content:after {
+                    position: absolute;
+                    content: '';
+                    top: -20px;
+                    height: 2px;
+                    width: 70%;
+                    background: lightblue;
+                }
+                .right form input,
+                .right form .msgForm {
+                    width: 70%;
+                }
+                .right form textarea {
+                    width: 70%;
+                }
+                .right form .btn button {
+                    padding: 10px 50px;
+                    margin-left: 15px;
+                }
+                .bottom center {
+                    display: none;
+                }
+            }
+            /*iPad*/
+            
+            @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                body {
+                    overflow-x: hidden;
+                }
+                nav {
+                    padding: 5px 30px;
+                }
+                nav ul li.items {
+                    width: 100%;
+                    display: none;
+                }
+                nav ul li.items.show {
+                    display: block;
+                }
+                nav ul li.btn {
+                    display: block;
+                    margin-top: 15px;
+                    margin-left: 200px;
+                }
+                nav ul li.items:hover {
+                    border-radius: 5px;
+                }
+                nav ul li.items:hover:after {
+                    opacity: 0;
+                }
+                .slideshow-item-text {
+                    max-width: 70%;
+                    padding: 3rem 1rem;
+                    left: 4%;
+                }
+                .slideshow-item-text h5 {
+                    font-size: 2rem;
+                }
+                .slideshow-item-text p {
+                    font-size: 1.7rem;
+                }
+                .services-indhold li {
+                    flex-basis: 100%;
+                    margin-bottom: 100px;
+                }
+                .services-indhold li:last-child {
+                    margin-bottom: 2%;
+                }
+                .services-indhold li p {
+                    padding: 0;
+                    font-size: 1.8rem;
+                }
+                .services-indhold li h4 {
+                    font-size: 2.5rem;
+                }
+                .service-button {
+                    padding: 20px 45px;
+                    font-size: 25px;
+                    font-weight: 600;
+                    margin-top: 4%;
+                }
+                .container {
+                    top: 240%;
+                }
+                .text-box-form {
+                    font-size: 150%;
+                    margin-top: -25px;
+                    margin-left: -40px;
+                }
+                .contact-form {
+                    flex-direction: column;
+                }
+                .msg textarea {
+                    height: 80px;
+                }
+                .input-fields,
+                .msg {
+                    width: 100%;
+                }
+                .facebook-container img {
+                    display: none;
+                }
+                .text-fb h3 {
+                    display: none;
+                }
+                .facebook-container {
+                    display: none;
+                }
+                .facebook-container h3 {
+                    display: none;
+                }
+                .text-fb {
+                    display: none;
+                }
+                .text-fb img {
+                    display: none;
+                }
+                footer {
+                    position: relative;
+                    bottom: 0px;
+                }
+                .main-content {
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                }
+                .main-content .box {
+                    margin: 5px 0;
+                }
+                .box .content:after {
+                    position: absolute;
+                    content: '';
+                    top: -20px;
+                    height: 2px;
+                    width: 70%;
+                    background: lightblue;
+                }
+                .right form input,
+                .right form .msgForm {
+                    width: 70%;
+                }
+                .right form textarea {
+                    width: 70%;
+                }
+                .right form .btn button {
+                    padding: 10px 100px;
+                    margin-left: 90px;
+                }
+                .bottom center {
+                    width: 100%;
+                    margin-top: 10px;
+                    align-items: center;
+                    margin-left: 110px;
+                }
+            }
